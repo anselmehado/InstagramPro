@@ -29,20 +29,14 @@
       <td> <%= f.label :password_confirmation %></td>
       <td><%= f.password_field :password_confirmation %></td>
     </tr>
-    <tr>
-      <td>  <%= form.label :image %></td>
-      <td>  <%= image_tag(@user.avatar_user.url) if @user.avatar_user && @user.avatar_user.url %></td>
-      <td>  <%= form.file_field :avatar_user %><%= form.hidden_field :avatar_user_cache %></td>
-    </tr>
   </table>
 
-
-
-  <!-- <div class="field">
-
-
-
-</div> -->
+  <div class="field">
+    <%= form.label :image %>
+    <%= image_tag(@user.avatar_user.url) if @user.avatar_user && @user.avatar_user.url %>
+    <%= form.file_field :avatar_user %>
+    <%= form.hidden_field :avatar_user_cache %>
+</div>
 
  <%= f.submit "Create my account" %>
  <% end %>
